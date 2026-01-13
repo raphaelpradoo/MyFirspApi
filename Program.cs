@@ -1,3 +1,5 @@
+using MyFirspApi;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -8,6 +10,8 @@ builder.Services.AddControllers();
 // Swagger
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+
+var teste = builder.Configuration.GetSection("MyClass").Get<MyClass>();
 
 var app = builder.Build();
 
